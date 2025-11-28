@@ -1,7 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage {
     private WebDriver driver;
@@ -20,6 +22,13 @@ public class HomePage {
         return new ProductsPage(driver);
     }
 
+    //method to go to contact page
+
+    public ContactPage clickContactLink(){
+        clinkLink("Contact us");
+
+        return new ContactPage(driver);
+    }
 
     private void clinkLink(String link){
         driver.findElement(By.linkText(link)).click();
