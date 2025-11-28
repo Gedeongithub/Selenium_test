@@ -19,7 +19,8 @@ public class SignupLoginPage {
 clickSignUptButton();
      }
 
-     private void clickSignUptButton(){
+     private AccountInformationPage clickSignUptButton(){
         driver.findElement(signUpButton).click();
+        return new AccountInformationPage(driver);
      }
 }
