@@ -31,4 +31,8 @@ public class ContactPage {
     private void clickSubmit(){
         driver.findElement(submitButton).click();
     }
+//the method to accept the alert which popup after hitting submit button
+    public void alertsAccept(){
+        driver.switchTo().alert().accept();
+    }
 }

@@ -11,6 +11,7 @@ public class ContactTest extends BaseTests {
         String message = "I wanted to greet you in the name of Jesus";
         contactPage.fillOutContactForm("Gedeon","gdufitimana@gmail.com","Greetings",message);
         contactPage.attachFileAndSubmit("C:\\Users\\Gedeon\\Desktop\\Selenium_test\\resources\\chromedriver.exe");
+        contactPage.alertsAccept();
 
     }
 }
