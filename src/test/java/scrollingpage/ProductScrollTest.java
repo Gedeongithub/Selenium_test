@@ -3,7 +3,7 @@ package scrollingpage;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
-public class productScrollTest extends BaseTests {
+public class ProductScrollTest extends BaseTests {
 
     @Test
     public void testProductScroll(){
