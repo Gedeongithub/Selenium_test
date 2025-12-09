@@ -35,7 +35,7 @@ public class HomePage {
         return new ProductPage(driver);
     }
 
-    //method to go to contact page
+    //method to go to alert_upload page
 
     public ContactPage clickContactLink(){
         clinkLink("Contact us");
