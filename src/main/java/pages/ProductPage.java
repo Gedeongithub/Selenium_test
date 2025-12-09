@@ -18,12 +18,19 @@ public class ProductPage {
         this.driver = driver;
     }
 
-    public void clickToScroll() {
-        List<WebElement> cards = driver.findElements(By.className("col-sm-4"));
-        WebElement lastCard = cards.get(cards.size() - 1);
 
-        new Actions(driver).moveToElement(lastCard).perform();
+//Method to scroll to certain index
+    public void scrollToCard(int index) {
+        List<WebElement> cards = driver.findElements(By.className("col-sm-4"));
+
+        if (index < 0 || index >= cards.size()) {
+            throw new IllegalArgumentException("Index " + index + " is out of range! Total cards: " + cards.size());
+        }
+        WebElement targetCard = cards.get(index);
+
+        new Actions(driver).moveToElement(targetCard).perform();
     }
+
 
     public void hoverProduct(){
         List<WebElement> elements = driver.findElements(By.className("col-sm-4"));

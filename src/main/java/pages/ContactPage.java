@@ -5,12 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class ContactPage {
     private WebDriver driver;
-    private By name = By.xpath("//*[@id=\"alert_upload-us-form\"]/div[1]/input");
-    private By email = By.xpath("//*[@id=\"alert_upload-us-form\"]/div[2]/input");
+    private By name = By.cssSelector("input[name='name']");
+    private By email = By.cssSelector("input[name='email']");
+    private By subject = By.xpath("//*[@id=\"contact-us-form\"]/div[3]/input");
     private By textArea = By.id("message");
-    private By subject = By.xpath("//*[@id=\"alert_upload-us-form\"]/div[3]/input");
-    private By fileField = By.xpath("//*[@id=\"alert_upload-us-form\"]/div[5]/input");
-    private By submitButton = By.xpath("//*[@id=\"alert_upload-us-form\"]/div[6]/input");
+
+    private By fileField = By.name("upload_file");
+    private By submitButton = By.name("submit");
 
 
     public ContactPage(WebDriver driver){

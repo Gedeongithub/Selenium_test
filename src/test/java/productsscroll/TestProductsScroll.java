@@ -8,6 +8,6 @@ public class TestProductsScroll extends BaseTests {
     @Test
     public void navigateToProductsToScroll(){
         var products = homePage.clickProductsLink();
-        products.clickToScroll();
+        products.scrollToCard(9);
     }
 }

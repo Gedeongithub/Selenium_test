@@ -9,7 +9,7 @@ public class TestSignupPage extends BaseTests {
     @Test
     public void signUpTest(){
         var signUp = homePage.clickSignupLoginPage();
-        signUp.fillData("Gedeon","gdufiti@gmail.com");
+        signUp.fillData("Gedeon","gdufit@gmail.com");
          accInfo.fillInAccountInfo();
 
          String expectedResult = "Account Created!".toUpperCase();

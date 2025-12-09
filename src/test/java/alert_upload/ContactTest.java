@@ -12,7 +12,7 @@ public class ContactTest extends BaseTests {
         var contactPage = homePage.clickContactLink();
         String message = "I wanted to greet you in the name of Jesus";
         contactPage.fillOutContactForm("Gedeon","gdufitimana@gmail.com","Greetings",message);
-        contactPage.attachFileAndSubmit("C:\\Users\\Gedeon\\Desktop\\Selenium_test\\resources\\file.txt");
+        contactPage.attachFileAndSubmit("C:\\Users\\Gedeon\\Desktop\\Selenium_test\\src\\test\\resources\\file.txt");
 
         //After attaching file, we get an alert_upload and this method is accepting an alert_upload
         contactPage.alertsAccept();
