@@ -35,4 +35,9 @@ public class ContactPage {
     public void alertsAccept(){
         driver.switchTo().alert().accept();
     }
+
+    public String successMessage(){
+        By success = By.cssSelector(".status");
+        return driver.findElement(success).getText();
+    }
 }

@@ -1,9 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomePage {
     private WebDriver driver;
@@ -12,14 +10,29 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public SignupLoginPage clickSignupLoginPage(){
+    //Method to return the signup page to create account
+    public SignupPage clickSignupLoginPage(){
         clinkLink("Signup / Login");
-        return new SignupLoginPage(driver);
+        return new SignupPage(driver);
     }
 
-    public ProductsPage clickProductMenu(){
+    //Method to return login page to log on
+    public LoginPage clickLoginPage(){
+        clinkLink("Signup / Login");
+        return new LoginPage(driver);
+    }
+
+    public LoginPage clickLogOut(){
+        driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")).click();
+        clinkLink(" Logout");
+        return new LoginPage(driver);
+    }
+
+
+    //Method to takes us to products page and scroll to teh bottom
+    public ProductPage clickProductsLink(){
         driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a/i")).click();
-        return new ProductsPage(driver);
+        return new ProductPage(driver);
     }
 
     //method to go to contact page

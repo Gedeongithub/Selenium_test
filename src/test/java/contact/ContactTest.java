@@ -3,6 +3,8 @@ package contact;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+
 public class ContactTest extends BaseTests {
 
     @Test
@@ -10,8 +12,9 @@ public class ContactTest extends BaseTests {
         var contactPage = homePage.clickContactLink();
         String message = "I wanted to greet you in the name of Jesus";
         contactPage.fillOutContactForm("Gedeon","gdufitimana@gmail.com","Greetings",message);
-        contactPage.attachFileAndSubmit("C:\\Users\\Gedeon\\Desktop\\Selenium_test\\resources\\chromedriver.exe");
+        contactPage.attachFileAndSubmit("C:\\Users\\Gedeon\\Desktop\\Selenium_test\\resources\\file.txt");
         contactPage.alertsAccept();
+        assertEquals(contactPage.successMessage(),"Success! Your details have been submitted successfully.","Text is different from what is expected");
 
     }
 }
