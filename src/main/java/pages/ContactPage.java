@@ -11,7 +11,7 @@ public class ContactPage {
     private By textArea = By.id("message");
 
     private By fileField = By.name("upload_file");
-    private By submitButton = By.name("submit");
+    private By submitButton = By.cssSelector("input[data-qa='submit-button']");
 
 
     public ContactPage(WebDriver driver){
