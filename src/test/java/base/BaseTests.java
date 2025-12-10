@@ -21,6 +21,7 @@ public void SetUp(){
     driver = new ChromeDriver();
     driver.get("https://www.automationexercise.com/");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    driver.manage().window().maximize();
     homePage = new HomePage(driver);
     accInfo = new AccountInformationPage(driver);
 
