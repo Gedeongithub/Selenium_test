@@ -40,7 +40,7 @@ public class ProductPage {
     }
 
     public void addToCart(){
-        By addToCartbtn = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[3]/div/div[1]/div[1]/a");
+        By addToCartbtn = By.cssSelector("a[data-product-id='2']");
         System.out.println(driver.findElement(addToCartbtn).getText());
         driver.findElement(addToCartbtn).click();
     }
