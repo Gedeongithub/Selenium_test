@@ -5,12 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class ContactPage {
     private WebDriver driver;
-    private By name = By.xpath("//*[@id=\"contact-us-form\"]/div[1]/input");
-    private By email = By.xpath("//*[@id=\"contact-us-form\"]/div[2]/input");
-    private By textArea = By.id("message");
+    private By name = By.cssSelector("input[name='name']");
+    private By email = By.cssSelector("input[name='email']");
     private By subject = By.xpath("//*[@id=\"contact-us-form\"]/div[3]/input");
-    private By fileField = By.xpath("//*[@id=\"contact-us-form\"]/div[5]/input");
-    private By submitButton = By.xpath("//*[@id=\"contact-us-form\"]/div[6]/input");
+    private By textArea = By.id("message");
+
+    private By fileField = By.name("upload_file");
+    private By submitButton = By.cssSelector("input[data-qa='submit-button']");
 
 
     public ContactPage(WebDriver driver){
@@ -31,8 +32,13 @@ public class ContactPage {
     private void clickSubmit(){
         driver.findElement(submitButton).click();
     }
-//the method to accept the alert which popup after hitting submit button
+//the method to accept the alert_upload which popup after hitting submit button
     public void alertsAccept(){
         driver.switchTo().alert().accept();
+    }
+
+    public String successMessage(){
+        By success = By.cssSelector(".status");
+        return driver.findElement(success).getText();
     }
 }
